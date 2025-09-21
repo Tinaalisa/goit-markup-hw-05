@@ -735,6 +735,9 @@ address {
      background-color: #404bbf;
  }
 
- .subscribe-icon {
-     fill: currentColor;
- }
+.subscribe-icon {
+    display: inline-block;
+    fill: currentColor;
+    stroke: currentColor;
+    flex: 0 0 auto;
+}
