@@ -699,7 +699,7 @@ address {
      padding-right: 16px;
 
      font-size: 12px;
-     line-height: 2;
+     line-height: 1.5;
      letter-spacing: 0.04em;
      color: #ffffff;
 
@@ -726,8 +726,6 @@ address {
 
      min-width: 165px;
      height: 40px;
-     padding: 8px 24px;
-     margin: 0;
 
      border: none;
      border-radius: 4px;
@@ -754,6 +752,4 @@ address {
     height: 24px;
     margin-left: 16px;
     fill: currentColor;
-    stroke: currentColor;
-    flex: 0 0 auto;
 }
