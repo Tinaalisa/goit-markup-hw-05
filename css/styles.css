@@ -481,16 +481,16 @@ address {
      inset: 0;
      background-color: rgba(46, 47, 66, 0.4);
      opacity: 0;
-     pointer-events: none;
      visibility: hidden;
+     pointer-events: none;
      transition: opacity 250ms cubic-bezier(0.4, 0, 0.2, 1),
          visibility 250ms cubic-bezier(0.4, 0, 0.2, 1);
  }
 
  .backdrop.is-open {
      opacity: 1;
-     pointer-events: auto;
      visibility: visible;
+     pointer-events: auto;
  }
 
  .no-scroll {
@@ -499,18 +499,18 @@ address {
 
  .modal {
      position: fixed;
-     /* щоб завжди була по центру */
      top: 50%;
      left: 50%;
      width: 408px;
      min-height: 584px;
-     padding: 24px;
-     background-color: #fff;
+     padding: 72px 24px 24px 24px;
+     background: #fcfcfc;
      border-radius: 4px;
      transform: translate(-50%, -50%) scale(0.97);
-     box-shadow: 0 1px 1px rgba(0, 0, 0, .08),
-         0 1px 6px rgba(0, 0, 0, .12),
-         0 2px 1px rgba(0, 0, 0, .08);
+     box-shadow:
+         0px 1px 1px rgba(0, 0, 0, 0.14),
+         0px 1px 3px rgba(0, 0, 0, 0.12),
+         0px 2px 1px rgba(0, 0, 0, 0.2);
      transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
  }
 
@@ -524,41 +524,56 @@ address {
      right: 24px;
      width: 24px;
      height: 24px;
+     padding: 0;
+     display: flex;
+     align-items: center;
+     justify-content: center;
      border-radius: 50%;
-     border: 1px solid rgba(46, 47, 66, 0.2);
-     background: transparent;
-     display: grid;
-     place-items: center;
-     color: #2e2f42;
+     background-color: #e7e9fc;
+     border: 1px solid rgba(0, 0, 0, 0.1);
      cursor: pointer;
      transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1),
-         color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+         border 250ms cubic-bezier(0.4, 0, 0.2, 1);
  }
 
  .modal-close-btn:hover,
  .modal-close-btn:focus {
      background-color: #404bbf;
-     color: #fff;
+     border: none;
  }
 
  .modal-close-icon {
-     fill: currentColor;
+     width: 8px;
+     height: 8px;
+     transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
+     fill: #2e2f42;
+ }
+
+ .modal-close-btn:hover .modal-close-icon,
+ .modal-close-btn:focus .modal-close-icon {
+     fill: #ffffff;
  }
 
  .modal-title {
-     margin: 48px 0 16px;
+     margin: 0 0 16px;
      font-weight: 500;
+     font-size: 16px;
+     line-height: 1.5;
+     letter-spacing: 0.02em;
+     text-align: center;
      color: #2e2f42;
  }
 
  .form-field {
-     margin-bottom: 8px;
+     margin-bottom: 16px;
  }
 
  .form-label {
      display: block;
      margin-bottom: 4px;
      font-size: 12px;
+     line-height: 1.17;
+     letter-spacing: 0.04em;
      color: #8e8f99;
  }
 
@@ -569,81 +584,55 @@ address {
  .form-input {
      width: 100%;
      height: 40px;
-     padding: 8px 38px 8px 38px;
+     padding: 8px 16px 8px 38px;
      border: 1px solid rgba(46, 47, 66, 0.4);
      border-radius: 4px;
+     background-color: transparent;
+     outline: transparent;
      transition: border-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+ }
+
+ .form-input:focus {
+     border-color: #4d5ae5;
  }
 
  .form-icon {
      position: absolute;
-     left: 12px;
+     left: 16px;
      top: 50%;
      transform: translateY(-50%);
-     color: #2e2f42;
      pointer-events: none;
-     transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
- }
-
- .form-input:focus {
-     outline: none;
-     border-color: #4d5ae5;
+     fill: #2e2f42;
+     transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
  }
 
  .form-input:focus+.form-icon {
-     color: #4d5ae5;
+     fill: #4d5ae5;
  }
 
  .form-textarea {
      width: 100%;
+     height: 120px;
      padding: 8px 16px;
      resize: none;
-     min-height: 120px;
+     font-size: 12px;
+     line-height: 1.17;
+     letter-spacing: 0.04em;
+     color: rgba(46, 47, 66, 0.4);
      border: 1px solid rgba(46, 47, 66, 0.4);
      border-radius: 4px;
+     background-color: transparent;
+     outline: transparent;
      transition: border-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
  }
 
  .form-textarea:focus {
-     outline: none;
      border-color: #4d5ae5;
- }
-
- .modal-submit {
-     display: block;
-     margin: 24px auto 0;
-     min-width: 169px;
-     height: 56px;
-     padding: 16px 24px;
-     border: none;
-     border-radius: 4px;
-     cursor: pointer;
-     color: #fff;
-     background-color: #4d5ae5;
-     transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1),
-         box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1);
- }
-
- .modal-submit:hover,
- .modal-submit:focus {
-     background-color: #404bbf;
- }
-
- .visually-hidden {
-     position: absolute;
-     width: 1px;
-     height: 1px;
-     margin: -1px;
-     border: 0;
-     padding: 0;
-     white-space: nowrap;
-     clip-path: inset(100%);
-     clip: rect(0 0 0 0);
-     overflow: hidden;
  }
 
  .form-agree {
      margin-top: 16px;
+     margin-bottom: 24px;
  }
 
  .agree-label {
@@ -651,6 +640,7 @@ address {
      align-items: center;
      gap: 8px;
      font-size: 12px;
+     line-height: 1.17;
      color: #8e8f99;
  }
 
@@ -662,75 +652,38 @@ address {
  .agree-box {
      width: 16px;
      height: 16px;
-     border: 1px solid rgba(46, 47, 66, 0.4);
-     border-radius: 2px;
      display: inline-flex;
      align-items: center;
      justify-content: center;
+     border-radius: 2px;
+     border: 1px solid rgba(46, 47, 66, 0.4);
      background-color: #fff;
      transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1),
-         border-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+         border 250ms cubic-bezier(0.4, 0, 0.2, 1),
+         fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
  }
 
  .agree-check {
-     fill: #fff;
-     opacity: 0;
-     transition: opacity 250ms cubic-bezier(0.4, 0, 0.2, 1);
+     width: 10px;
+     height: 8px;
+     fill: transparent;
  }
 
  .agree-checkbox:checked+.agree-label>.agree-box {
      background-color: #404bbf;
-     border-color: #404bbf;
+     border: none;
  }
 
  .agree-checkbox:checked+.agree-label>.agree-box .agree-check {
-     opacity: 1;
+     fill: #f4f4fd;
  }
 
- .footer-container {
-     gap: 72px;
-     justify-content: space-between;
- }
-
- .subscribe-form {
-     display: flex;
-     gap: 24px;
- }
-
- .subscribe-row {
-     display: flex;
-     gap: 24px;
- }
-
- .subscribe-input {
-     width: 264px;
-     height: 40px;
-     padding-left: 16px;
-     font-size: 12px;
-     line-height: 2;
-     letter-spacing: 0.04em;
-     color: #ffffff;
-     border: 1px solid #ffffff;
-     background-color: transparent;
-     border-radius: 4px;
-     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
- }
-
- .subscribe-input::placeholder {
-     color: rgba(255, 255, 255, 0.6);
- }
-
- .subscribe-input:focus {
-     outline: none;
-     border-color: #4d5ae5;
- }
-
- .subscribe-btn {
-     display: flex;
-     justify-content: center;
-     align-items: center;
-     min-width: 165px;
-     height: 40px;
+ .modal-submit {
+     display: block;
+     min-width: 169px;
+     height: 56px;
+     margin: 24px auto 0;
+     padding: 16px 24px;
      border: none;
      border-radius: 4px;
      background-color: #4d5ae5;
@@ -744,14 +697,7 @@ address {
      transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
  }
 
- .subscribe-btn:hover,
- .subscribe-btn:focus {
+ .modal-submit:hover,
+ .modal-submit:focus {
      background-color: #404bbf;
- }
-
- .subscribe-icon {
-     width: 24px;
-     height: 24px;
-     margin-left: 16px;
-     fill: currentColor;
  }
