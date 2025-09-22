@@ -688,7 +688,8 @@ address {
  }
 
  .subscribe-form {
-     margin-left: auto;
+     display: flex;
+     gap: 24px;
  }
 
  .subscribe-row {
@@ -699,12 +700,21 @@ address {
  .subscribe-input {
      width: 264px;
      height: 40px;
-     padding: 8px 16px;
-     color: #fff;
-     border: 1px solid rgba(255, 255, 255, 0.3);
-     background: transparent;
+     padding-left: 16px;
+
+     font-size: 12px;
+     line-height: 2;
+     letter-spacing: 0.04em;
+     color: #ffffff;
+
+     border: 1px solid #ffffff;
+     background-color: transparent;
      border-radius: 4px;
-     transition: border-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
+ }
+
+ .subscribe-input::placeholder {
+     color: #ffffff;
  }
 
  .subscribe-input::placeholder {
@@ -717,16 +727,25 @@ address {
  }
 
  .subscribe-btn {
-     display: inline-flex;
+     display: flex;
+     justify-content: center;
      align-items: center;
-     gap: 8px;
-     padding: 8px 24px;
+
+     min-width: 165px;
      height: 40px;
+
      border: none;
      border-radius: 4px;
      background-color: #4d5ae5;
-     color: #fff;
+
+     color: #ffffff;
+     font-family: "Roboto", sans-serif;
+     font-size: 16px;
+     font-weight: 500;
+     line-height: 1.5;
+     letter-spacing: 0.04em;
      cursor: pointer;
+
      transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
  }
 
@@ -736,8 +755,8 @@ address {
  }
 
 .subscribe-icon {
-    display: inline-block;
+    width: 24px;
+    height: 24px;
+    margin-left: 16px;
     fill: currentColor;
-    stroke: currentColor;
-    flex: 0 0 auto;
 }
