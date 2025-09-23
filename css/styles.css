@@ -493,6 +493,10 @@ address {
      pointer-events: auto;
  }
 
+ .backdrop.is-open .modal {
+     transform: translate(-50%, -50%) scale(1);
+ }
+
  .no-scroll {
      overflow: hidden;
  }
@@ -509,10 +513,6 @@ address {
      transform: translate(-50%, -50%) scale(0.97);
      box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.14), 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 2px 1px rgba(0, 0, 0, 0.20);
      transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
- }
-
- .backdrop.is-open .modal {
-     transform: translate(-50%, -50%) scale(1);
  }
 
  .modal-close-btn {
@@ -558,8 +558,32 @@ address {
      color: #2e2f42;
  }
 
+ .modal-submit {
+     display: block;
+     margin: 24px auto 0;
+     min-width: 169px;
+     height: 56px;
+     padding: 16px 24px;
+     border: none;
+     border-radius: 4px;
+     font-family: "Roboto", sans-serif;
+     font-weight: 500;
+     font-size: 16px;
+     line-height: 1.5;
+     letter-spacing: 0.04em;
+     color: #fff;
+     background-color: #4d5ae5;
+     cursor: pointer;
+     transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+ }
+
+ .modal-submit:hover,
+ .modal-submit:focus {
+     background-color: #404bbf;
+ }
+
  .form-field {
-     margin-bottom: 16px;
+     margin-bottom: 8px;
  }
 
  .form-label {
@@ -620,7 +644,7 @@ address {
      font-size: 12px;
      line-height: 1.17;
      letter-spacing: 0.04em;
-     color: #2e2f42;
+     color: rgba(46, 47, 66, 0.4);
      background-color: transparent;
      border: 1px solid rgba(46, 47, 66, 0.4);
      border-radius: 4px;
@@ -636,30 +660,6 @@ address {
  .form-textarea:focus {
      outline: none;
      border-color: #4d5ae5;
- }
-
- .modal-submit {
-     display: block;
-     margin: 24px auto 0;
-     min-width: 169px;
-     height: 56px;
-     padding: 16px 24px;
-     border: none;
-     border-radius: 4px;
-     font-family: "Roboto", sans-serif;
-     font-weight: 500;
-     font-size: 16px;
-     line-height: 1.5;
-     letter-spacing: 0.04em;
-     color: #fff;
-     background-color: #4d5ae5;
-     cursor: pointer;
-     transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
- }
-
- .modal-submit:hover,
- .modal-submit:focus {
-     background-color: #404bbf;
  }
 
  .visually-hidden {
@@ -703,13 +703,14 @@ address {
      justify-content: center;
      border: 1px solid rgba(46, 47, 66, 0.4);
      border-radius: 2px;
+     fill: transparent;
      background-color: #fff;
-     transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1), border 250ms cubic-bezier(0.4, 0, 0.2, 1), fill 250ms cubic-bezier(0,4, 0, 0.2, 1);
+     transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1), border 250ms cubic-bezier(0.4, 0, 0.2, 1), fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
  }
 
  .agree-check {
      fill: transparent;
-     transition: opasity 250ms cubic-bezier(0.4, 0, 0.2, 1);
+     transition: opacity 250ms cubic-bezier(0.4, 0, 0.2, 1);
  }
 
  .agree-checkbox:checked + .agree-label > .agree-box {
@@ -719,7 +720,7 @@ address {
 
  .agree-checkbox:checked + .agree-label > .agree-box .agree-check {
      opacity: 1;
-     fill: #f4f4FD;
+     fill: #F4F4FD;
  }
 
  .footer-container {
