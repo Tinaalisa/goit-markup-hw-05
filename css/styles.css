@@ -440,7 +440,6 @@ address {
 
  .footer-brand {
     max-width: 264px;
-    margin-right: 120px;
  }
 
  .footer-logo .logo-part {
@@ -530,7 +529,7 @@ address {
      border: 1px solid rgba(0, 0, 0, 0.1);
      color: #2e2f42;
      cursor: pointer;
-     transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1), border 250ms cubic-bezier(0.4, 0, 0.2, 1);
+     transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
  }
 
  .modal-close-btn:hover,
@@ -548,7 +547,6 @@ address {
  }
 
  .modal-title {
-     margin: 48px 0 16px;
      text-align: center;
      font-weight: 500;
      margin-bottom: 16px;
@@ -679,7 +677,6 @@ address {
  }
 
  .form-agree {
-     margin-top: 16px;
      margin-bottom: 24px;
  }
 
@@ -729,7 +726,6 @@ address {
  }
 
  .footer-container {
-     gap: 72px;
      justify-content: space-between;
  }
 
